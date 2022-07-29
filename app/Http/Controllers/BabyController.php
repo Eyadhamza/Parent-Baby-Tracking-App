@@ -39,7 +39,7 @@ class BabyController extends Controller
     {
         $data = $request->validated();
 
-        if (auth('parents')->check()) {
+        if (auth('parent-users')->check()) {
             $baby = auth()
                 ->user()
                 ->babies()
@@ -74,7 +74,7 @@ class BabyController extends Controller
     {
         $data = $request->validated();
 
-        if (auth('parents')->check()) {
+        if (auth('parent-users')->check()) {
             $baby->update($data);
 
             return updatedSuccessfullyResponse();
@@ -88,7 +88,7 @@ class BabyController extends Controller
      */
     public function destroy(Baby $baby): JsonResponse
     {
-        if (auth('parents')->check()) {
+        if (auth('parent-users')->check()) {
             $baby->delete();
 
             return deletedSuccessfullyResponse();

@@ -12,7 +12,8 @@ class BabyFactory extends Factory
     public function definition(): array
     {
         return [
-
+            'name' => $this->faker->name,
+            'birth_date' => $this->faker->dateTimeBetween('-1 years', '-1 days'),
         ];
     }
 }
