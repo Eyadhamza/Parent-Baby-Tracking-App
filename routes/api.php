@@ -26,10 +26,10 @@ Route::get('/partners',[ParentUserController::class,'index'])
     ->name('partners.index');
 
 Route::post('parent/register', [ParentUserAuthController::class, 'register'])
-    ->name('api.parent.register');
+    ->name('parent.register');
 
 Route::post('parent/login', [ParentUserAuthController::class, 'login'])
-    ->name('api.parent.login');
+    ->name('parent.login');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
