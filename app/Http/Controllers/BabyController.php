@@ -39,12 +39,11 @@ class BabyController extends Controller
     {
         $data = $request->validated();
 
-        if (auth('api-psychiatrist')->check()) {
-            $post = auth()
+        if (auth('parents')->check()) {
+            $baby = auth()
                 ->user()
-                ->posts()
+                ->babies()
                 ->create($data);
-            $post->labels()->sync($request->get('labels'));
             return createdSuccessfullyResponse();
         }
 
@@ -63,20 +62,20 @@ class BabyController extends Controller
      * @responseField data " App\Models\Baby Info"
      * Return a one App\Models\Baby by id
      */
-    public function show(Baby $post): BabyResource
+    public function show(Baby $baby): BabyResource
     {
-        return new BabyResource($post);
+        return new BabyResource($baby);
     }
 
     /**
      * Update a specified Baby - Not Implemented.
      */
-    public function update(BabyStoreRequest $request, Baby $post): JsonResponse
+    public function update(BabyStoreRequest $request, Baby $baby): JsonResponse
     {
         $data = $request->validated();
 
-        if (auth('api-psychiatrist')->check()) {
-            $post->update($data);
+        if (auth('parents')->check()) {
+            $baby->update($data);
 
             return updatedSuccessfullyResponse();
         }
@@ -87,10 +86,10 @@ class BabyController extends Controller
     /**
      * Remove a specified Baby - Not Implemented.
      */
-    public function destroy(Baby $post): JsonResponse
+    public function destroy(Baby $baby): JsonResponse
     {
-        if (auth('api-psychiatrist')->check()) {
-            $post->delete();
+        if (auth('parents')->check()) {
+            $baby->delete();
 
             return deletedSuccessfullyResponse();
         }

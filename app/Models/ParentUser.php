@@ -22,4 +22,10 @@ class ParentUser extends Model
     {
         return $this->belongsToMany(Baby::class);
     }
+
+    public function invite(string $parentId): void
+    {
+        $this->partner()->associate(ParentUser::find($parentId));
+        $this->save();
+    }
 }
