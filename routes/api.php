@@ -22,6 +22,8 @@ Route::apiResource('/babies', BabyController::class);
 Route::post('/parents/invite',[ParentUserController::class,'invite'])
     ->name('parents.invite');
 
+Route::get('/partners',[ParentUserController::class,'index'])
+    ->name('partners.index');
 
 Route::post('parent/register', [ParentUserAuthController::class, 'register'])
     ->name('api.parent.register');
