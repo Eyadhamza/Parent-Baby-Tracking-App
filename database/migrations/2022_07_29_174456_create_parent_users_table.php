@@ -12,7 +12,10 @@ return new class extends Migration {
             $table->string('email')->unique();
             $table->string('name');
             $table->foreignId('partner_id')
-                ->constrained();
+                ->nullable()
+                ->references('id')
+                ->on('parent_users')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

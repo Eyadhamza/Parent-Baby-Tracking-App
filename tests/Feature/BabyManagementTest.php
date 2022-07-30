@@ -2,20 +2,23 @@
 
 namespace Tests\Feature;
 
+use App\Models\Baby;
+use App\Models\ParentUser;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class BabyManagementTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function test_example()
-    {
-        $response = $this->get('/');
+    use RefreshDatabase;
 
-        $response->assertStatus(200);
+    public function test_it_can_create_a_baby()
+    {
+        $this->withoutExceptionHandling();
+        $parentUser = ParentUser::factory()->create();
+        $this->actingAs($parentUser);
+        $baby = Baby::factory()->make();
+
+        $this->post('api/babies', $baby->toArray());
+        $this->assertDatabaseHas('babies', $baby->toArray());
     }
 }

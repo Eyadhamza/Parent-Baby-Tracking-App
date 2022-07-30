@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'parent-users',
+        'guard' => 'api-users',
+        'passwords' => 'parent_users',
     ],
 
     /*
@@ -36,9 +36,9 @@ return [
     */
 
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'parent-users',
+        'api-users' => [
+            'driver' => 'sanctum',
+            'provider' => 'parent_users',
         ],
     ],
 
@@ -65,10 +65,6 @@ return [
             'model' => App\Models\ParentUser::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*
@@ -88,7 +84,7 @@ return [
 
     'passwords' => [
         'users' => [
-            'provider' => 'users',
+            'provider' => 'parent_users',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

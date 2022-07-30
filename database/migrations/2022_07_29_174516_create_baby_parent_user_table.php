@@ -11,10 +11,10 @@ return new class extends Migration {
             $table->foreignId('baby_id')
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->foreignId('parent_id')
+            $table->foreignId('parent_user_id')
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->index(['baby_id', 'parent_id']);
+            $table->index(['baby_id', 'parent_user_id']);
             $table->timestamps();
         });
     }
