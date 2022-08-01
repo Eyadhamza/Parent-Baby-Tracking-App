@@ -14,13 +14,14 @@ class ParentUser extends Authenticatable
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'name',
         'email',
     ];
 
     public function partner(): HasOne
     {
-        return $this->hasOne(ParentUser::class);
+        return $this->hasOne(ParentUser::class,'partner_id');
     }
 
     public function babies(): BelongsToMany
@@ -30,7 +31,7 @@ class ParentUser extends Authenticatable
 
     public function invite(string $parentId): void
     {
-        $this->partner()->associate(ParentUser::find($parentId));
+        $this->partner()->save(ParentUser::find($parentId));
         $this->save();
     }
 }

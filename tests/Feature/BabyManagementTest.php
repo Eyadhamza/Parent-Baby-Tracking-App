@@ -59,7 +59,8 @@ class BabyManagementTest extends TestCase
         );
     }
 
-    public function test_it_can_delete_a_baby()
+
+    public function test_parent_is_the_only_one_who_can_delete_a_baby()
     {
         $this->withoutExceptionHandling();
 
@@ -67,6 +68,8 @@ class BabyManagementTest extends TestCase
         $this->actingAs($parentUser);
 
         $baby = Baby::factory()->create();
+
+        $parentUser->babies()->save($baby);
 
         $this->deleteJson(route('babies.destroy', $baby))
             ->assertStatus(200)

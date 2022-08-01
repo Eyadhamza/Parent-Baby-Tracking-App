@@ -15,7 +15,14 @@ class ParentUserController extends Controller
 
     public function invite()
     {
-        auth()->user()->invite(request('parent_id'));
+        if (auth()->user()->id == request('id')) {
+            return response()->json([
+                'message' => 'You can not invite yourself',
+            ], 400);
+        }
+        auth()
+            ->user()
+            ->invite(request('id'));
 
         return response()->json(['message' => 'Invitation sent']);
     }

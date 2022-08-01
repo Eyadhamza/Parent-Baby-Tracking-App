@@ -88,9 +88,8 @@ class BabyController extends Controller
      */
     public function destroy(Baby $baby): JsonResponse
     {
-        if (auth()->check()) {
+        if (auth()->check() && auth()->user()->id === $baby->parents()->first()->id) {
             $baby->delete();
-
             return deletedSuccessfullyResponse();
         }
 

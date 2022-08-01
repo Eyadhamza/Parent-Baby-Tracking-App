@@ -2,20 +2,41 @@
 
 namespace Tests\Feature;
 
+use App\Models\ParentUser;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class ParentUserManagementTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function test_example()
-    {
-        $response = $this->get('/');
+    use RefreshDatabase;
 
-        $response->assertStatus(200);
+    public function test_parent_user_can_add_a_partner()
+    {
+        $this->withoutExceptionHandling();
+
+        $parentUser = ParentUser::factory()->create();
+        $this->actingAs($parentUser);
+
+        $partner = ParentUser::factory()->create();
+        $this->postJson(route('parents.invite'), $partner->toArray())
+            ->assertStatus(200)
+            ->assertJson([
+                'message' => 'Invitation sent',
+            ]);
+
+    }
+    public function test_parent_user_can_not_add_himself_as_a_partner()
+    {
+        $this->withoutExceptionHandling();
+
+        $parentUser = ParentUser::factory()->create();
+        $this->actingAs($parentUser);
+
+        $this->postJson(route('parents.invite'), $parentUser->toArray())
+            ->assertStatus(400)
+            ->assertJson([
+                'message' => 'You can not invite yourself',
+            ]);
+
     }
 }
