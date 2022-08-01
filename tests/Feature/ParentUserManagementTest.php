@@ -37,6 +37,25 @@ class ParentUserManagementTest extends TestCase
             ->assertJson([
                 'message' => 'You can not invite yourself',
             ]);
+    }
+    public function test_a_user_parent_can_show_his_partner()
+    {
+        $this->withoutExceptionHandling();
 
+        $parentUser = ParentUser::factory()->create();
+        $this->actingAs($parentUser);
+
+        $partner = ParentUser::factory()->create();
+        $parentUser->invite($partner->id);
+
+        $this->getJson(route('parents.index'))
+            ->assertStatus(200)
+            ->assertJson([
+                'data' => [
+                        'id' => $partner->id,
+                        'name' => $partner->name,
+                        'email' => $partner->email,
+                    ],
+            ]);
     }
 }

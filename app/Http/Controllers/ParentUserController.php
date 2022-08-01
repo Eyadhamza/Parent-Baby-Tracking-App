@@ -9,8 +9,7 @@ class ParentUserController extends Controller
 {
     public function index()
     {
-
-        return ParentUserResource::collection(auth()->user()->partners()->get());
+        return new ParentUserResource(auth()->user()->partner);
     }
 
     public function invite()
