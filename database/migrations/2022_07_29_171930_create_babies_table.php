@@ -10,7 +10,6 @@ return new class extends Migration {
         Schema::create('babies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->date('birth_date');
             $table->timestamps();
         });
     }
