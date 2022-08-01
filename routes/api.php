@@ -17,20 +17,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('/babies', BabyController::class);
 
-Route::post('/parents/invite',[ParentUserController::class,'invite'])
-    ->name('parents.invite');
+Route::middleware('auth:sanctum')->group(function () {
 
-Route::get('/parents',[ParentUserController::class,'index'])
-    ->name('parents.index');
+    Route::apiResource('/babies', BabyController::class);
 
-Route::post('parent/register', [ParentUserAuthController::class, 'register'])
-    ->name('parent.register');
+    Route::post('/parents/invite', [ParentUserController::class, 'invite'])
+        ->name('parents.invite');
 
-Route::post('parent/login', [ParentUserAuthController::class, 'login'])
-    ->name('parent.login');
+    Route::get('/parents', [ParentUserController::class, 'index'])
+        ->name('parents.index');
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+    Route::post('parent/register', [ParentUserAuthController::class, 'register'])
+        ->name('parent.register');
+
+    Route::post('parent/login', [ParentUserAuthController::class, 'login'])
+        ->name('parent.login');
 });
+
