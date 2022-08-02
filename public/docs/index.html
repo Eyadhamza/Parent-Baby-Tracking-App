@@ -168,8 +168,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"fcjdyctwrtseclttzxihpzwfkxwforkrtosynwhkryjxvkhswduookejtxavaszybdauvmkrzsftqbkdcitgcphhbmhflchrvretophsxouxwffudoljroiazggburjgcnnmvoepbnvfeuvplhalscadreqpixctptszpqmgehyiljcbltjhzjbbykkgptyucsonhaerqqfumaoykpetuezywqgllimfcewmwagfnb\",
-    \"email\": \"uckxairtezusyhnljzupefoohwnuczcfycdkmqviaxdrxnqhdarucpmdnakbiuoqrgivnyspkpfvclehottvjgurkoaqirqfoyhvhlggqfcvriuyxxxlanhxybiikmhanjcoaivjzcxvbiohtvuqxizfqhydawfhqqfjnldfcnydurxvgcnpzmpqvuxadzkyohqkuoutvjuxtspabueclawllwzs\"
+    \"name\": \"Eyad\",
+    \"email\": \"eyad@gmail.com\"
 }"
 </code></pre></div>
 
@@ -185,8 +185,8 @@ const headers = {
 };
 
 let body = {
-    "name": "fcjdyctwrtseclttzxihpzwfkxwforkrtosynwhkryjxvkhswduookejtxavaszybdauvmkrzsftqbkdcitgcphhbmhflchrvretophsxouxwffudoljroiazggburjgcnnmvoepbnvfeuvplhalscadreqpixctptszpqmgehyiljcbltjhzjbbykkgptyucsonhaerqqfumaoykpetuezywqgllimfcewmwagfnb",
-    "email": "uckxairtezusyhnljzupefoohwnuczcfycdkmqviaxdrxnqhdarucpmdnakbiuoqrgivnyspkpfvclehottvjgurkoaqirqfoyhvhlggqfcvriuyxxxlanhxybiikmhanjcoaivjzcxvbiohtvuqxizfqhydawfhqqfjnldfcnydurxvgcnpzmpqvuxadzkyohqkuoutvjuxtspabueclawllwzs"
+    "name": "Eyad",
+    "email": "eyad@gmail.com"
 };
 
 fetch(url, {
@@ -240,24 +240,24 @@ fetch(url, {
         </p>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
-            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+            <b><code>name</code></b>&nbsp;&nbsp;<small>required</small>     <i>optional</i> &nbsp;
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-parents-register"
-               value="fcjdyctwrtseclttzxihpzwfkxwforkrtosynwhkryjxvkhswduookejtxavaszybdauvmkrzsftqbkdcitgcphhbmhflchrvretophsxouxwffudoljroiazggburjgcnnmvoepbnvfeuvplhalscadreqpixctptszpqmgehyiljcbltjhzjbbykkgptyucsonhaerqqfumaoykpetuezywqgllimfcewmwagfnb"
+               value="Eyad"
                data-component="body" hidden>
     <br>
-<p>Must not be greater than 255 characters.</p>
+<p>name of the parent.</p>
         </p>
                 <p>
-            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+            <b><code>email</code></b>&nbsp;&nbsp;<small>required</small>     <i>optional</i> &nbsp;
                 <input type="text"
                name="email"
                data-endpoint="POSTapi-parents-register"
-               value="uckxairtezusyhnljzupefoohwnuczcfycdkmqviaxdrxnqhdarucpmdnakbiuoqrgivnyspkpfvclehottvjgurkoaqirqfoyhvhlggqfcvriuyxxxlanhxybiikmhanjcoaivjzcxvbiohtvuqxizfqhydawfhqqfjnldfcnydurxvgcnpzmpqvuxadzkyohqkuoutvjuxtspabueclawllwzs"
+               value="eyad@gmail.com"
                data-component="body" hidden>
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters.</p>
+<p>The email of the parent.</p>
         </p>
         </form>
 
@@ -290,8 +290,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id\": \"fizfpamdloypuvtagdtfagpleunocbqrieldiqwxmvqafpbxljsdlblwlhyfkrpu\",
-    \"name\": \"sgxlcgigphi\"
+    \"id\": \"9\",
+    \"name\": \"zmsxuqojfdsywwnxttdyfasndchafax\"
 }"
 </code></pre></div>
 
@@ -307,8 +307,8 @@ const headers = {
 };
 
 let body = {
-    "id": "fizfpamdloypuvtagdtfagpleunocbqrieldiqwxmvqafpbxljsdlblwlhyfkrpu",
-    "name": "sgxlcgigphi"
+    "id": "9",
+    "name": "zmsxuqojfdsywwnxttdyfasndchafax"
 };
 
 fetch(url, {
@@ -371,21 +371,21 @@ fetch(url, {
         </p>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
-            <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+            <b><code>id</code></b>&nbsp;&nbsp;<small>.</small>     <i>optional</i> &nbsp;
                 <input type="text"
                name="id"
                data-endpoint="POSTapi-parents-login"
-               value="fizfpamdloypuvtagdtfagpleunocbqrieldiqwxmvqafpbxljsdlblwlhyfkrpu"
+               value="9"
                data-component="body" hidden>
     <br>
-<p>This field is required when <code>name</code> is not present. Must not be greater than 255 characters.</p>
+
         </p>
                 <p>
             <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-parents-login"
-               value="sgxlcgigphi"
+               value="zmsxuqojfdsywwnxttdyfasndchafax"
                data-component="body" hidden>
     <br>
 <p>This field is required when <code>id</code> is not present. Must not be greater than 255 characters.</p>
@@ -455,12 +455,12 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 5,
-            &quot;name&quot;: &quot;Hal Hamill&quot;
+            &quot;id&quot;: 38,
+            &quot;name&quot;: &quot;Mr. Dameon Williamson&quot;
         },
         {
-            &quot;id&quot;: 6,
-            &quot;name&quot;: &quot;Miss Bailee Robel I&quot;
+            &quot;id&quot;: 39,
+            &quot;name&quot;: &quot;Mrs. June Kihn&quot;
         }
     ]
 }</code>
@@ -550,7 +550,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"wugfjqgqjtbzjlvtwsqstswiimiceumoogrcmgqvgprtpgsbuhpooksvuqlsvpjueomdjppgmrwzmqhxvqoqsfzbqnwua\"
+    \"name\": \"ilruih\"
 }"
 </code></pre></div>
 
@@ -567,7 +567,7 @@ const headers = {
 };
 
 let body = {
-    "name": "wugfjqgqjtbzjlvtwsqstswiimiceumoogrcmgqvgprtpgsbuhpooksvuqlsvpjueomdjppgmrwzmqhxvqoqsfzbqnwua"
+    "name": "ilruih"
 };
 
 fetch(url, {
@@ -633,7 +633,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-babies"
-               value="wugfjqgqjtbzjlvtwsqstswiimiceumoogrcmgqvgprtpgsbuhpooksvuqlsvpjueomdjppgmrwzmqhxvqoqsfzbqnwua"
+               value="ilruih"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -654,7 +654,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/babies/7" \
+    --get "http://127.0.0.1:8000/api/babies/10" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -662,7 +662,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/babies/7"
+    "http://127.0.0.1:8000/api/babies/10"
 );
 
 const headers = {
@@ -686,8 +686,8 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 7,
-        &quot;name&quot;: &quot;Dr. Reagan Pfannerstill MD&quot;
+        &quot;id&quot;: 40,
+        &quot;name&quot;: &quot;Kellie Boyle&quot;
     }
 }</code>
  </pre>
@@ -754,7 +754,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="GETapi-babies--id-"
-               value="7"
+               value="10"
                data-component="url" hidden>
     <br>
 <p>The ID of the baby.</p>
@@ -783,19 +783,19 @@ Return a one App\Models\Baby by id</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8000/api/babies/10" \
+    "http://127.0.0.1:8000/api/babies/16" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"kacymgmlcasbexjxvzxhfscdlljbfrdegemzdlgzwimppdgprzelhzwhifwcokuncfkqirlknzhblyogizyheocawylgacutjkucyavyorumooxcccccelvlolgkvrxflywvoqsisrvfpqsvhztznrgxukyrkpdxsqnrhsoiwpjryejzgafykvtzbxmlpmdkisgmousjhaqzmwgjzwxaqjeeyfixrkzbtarrnoacduaohqhddygvekjcdixrfrt\"
+    \"name\": \"poivbvgpmmlolzsuvpmngvnsldhpxcdyzlbnqzxcfxupwyenekqujriiqidleohomdjsuyspjtbintaxzxunnugtncioemnulaogsqizoowujjyudcxmcqiqlvgfsjxojfamzmqeqvsspjdtnzraswaovogibppjpxpyqnfqg\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/babies/10"
+    "http://127.0.0.1:8000/api/babies/16"
 );
 
 const headers = {
@@ -805,7 +805,7 @@ const headers = {
 };
 
 let body = {
-    "name": "kacymgmlcasbexjxvzxhfscdlljbfrdegemzdlgzwimppdgprzelhzwhifwcokuncfkqirlknzhblyogizyheocawylgacutjkucyavyorumooxcccccelvlolgkvrxflywvoqsisrvfpqsvhztznrgxukyrkpdxsqnrhsoiwpjryejzgafykvtzbxmlpmdkisgmousjhaqzmwgjzwxaqjeeyfixrkzbtarrnoacduaohqhddygvekjcdixrfrt"
+    "name": "poivbvgpmmlolzsuvpmngvnsldhpxcdyzlbnqzxcfxupwyenekqujriiqidleohomdjsuyspjtbintaxzxunnugtncioemnulaogsqizoowujjyudcxmcqiqlvgfsjxojfamzmqeqvsspjdtnzraswaovogibppjpxpyqnfqg"
 };
 
 fetch(url, {
@@ -875,7 +875,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="PUTapi-babies--id-"
-               value="10"
+               value="16"
                data-component="url" hidden>
     <br>
 <p>The ID of the baby.</p>
@@ -886,7 +886,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="PUTapi-babies--id-"
-               value="kacymgmlcasbexjxvzxhfscdlljbfrdegemzdlgzwimppdgprzelhzwhifwcokuncfkqirlknzhblyogizyheocawylgacutjkucyavyorumooxcccccelvlolgkvrxflywvoqsisrvfpqsvhztznrgxukyrkpdxsqnrhsoiwpjryejzgafykvtzbxmlpmdkisgmousjhaqzmwgjzwxaqjeeyfixrkzbtarrnoacduaohqhddygvekjcdixrfrt"
+               value="poivbvgpmmlolzsuvpmngvnsldhpxcdyzlbnqzxcfxupwyenekqujriiqidleohomdjsuyspjtbintaxzxunnugtncioemnulaogsqizoowujjyudcxmcqiqlvgfsjxojfamzmqeqvsspjdtnzraswaovogibppjpxpyqnfqg"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -907,7 +907,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8000/api/babies/10" \
+    "http://127.0.0.1:8000/api/babies/13" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -915,7 +915,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/babies/10"
+    "http://127.0.0.1:8000/api/babies/13"
 );
 
 const headers = {
@@ -986,7 +986,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="DELETEapi-babies--id-"
-               value="10"
+               value="13"
                data-component="url" hidden>
     <br>
 <p>The ID of the baby.</p>
@@ -1016,7 +1016,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"id\": \"qui\"
+    \"id\": \"9\"
 }"
 </code></pre></div>
 
@@ -1033,7 +1033,7 @@ const headers = {
 };
 
 let body = {
-    "id": "qui"
+    "id": "9"
 };
 
 fetch(url, {
@@ -1095,14 +1095,14 @@ fetch(url, {
         </p>
                         <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
-            <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+            <b><code>id</code></b>&nbsp;&nbsp;<small>The</small>     <i>optional</i> &nbsp;
                 <input type="text"
                name="id"
                data-endpoint="POSTapi-parents-invite"
-               value="qui"
+               value="9"
                data-component="body" hidden>
     <br>
-
+<p>id of the parent.</p>
         </p>
         </form>
 
@@ -1153,14 +1153,14 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 5,
-            &quot;name&quot;: &quot;Abigayle Kihn I&quot;,
-            &quot;email&quot;: &quot;christopher.ruecker@example.com&quot;
+            &quot;id&quot;: 28,
+            &quot;name&quot;: &quot;Shayne Moore&quot;,
+            &quot;email&quot;: &quot;connor84@example.org&quot;
         },
         {
-            &quot;id&quot;: 6,
-            &quot;name&quot;: &quot;Dr. Burnice Boyle Sr.&quot;,
-            &quot;email&quot;: &quot;teagan.shanahan@example.org&quot;
+            &quot;id&quot;: 29,
+            &quot;name&quot;: &quot;Jordane Spinka&quot;,
+            &quot;email&quot;: &quot;laisha.becker@example.org&quot;
         }
     ]
 }</code>

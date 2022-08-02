@@ -18,17 +18,17 @@ endpoints:
     bodyParameters:
       name:
         name: name
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: fcjdyctwrtseclttzxihpzwfkxwforkrtosynwhkryjxvkhswduookejtxavaszybdauvmkrzsftqbkdcitgcphhbmhflchrvretophsxouxwffudoljroiazggburjgcnnmvoepbnvfeuvplhalscadreqpixctptszpqmgehyiljcbltjhzjbbykkgptyucsonhaerqqfumaoykpetuezywqgllimfcewmwagfnb
-        type: string
+        description: 'name of the parent.'
+        required: false
+        example: Eyad
+        type: required
         custom: []
       email:
         name: email
-        description: 'Must be a valid email address. Must not be greater than 255 characters.'
-        required: true
-        example: uckxairtezusyhnljzupefoohwnuczcfycdkmqviaxdrxnqhdarucpmdnakbiuoqrgivnyspkpfvclehottvjgurkoaqirqfoyhvhlggqfcvriuyxxxlanhxybiikmhanjcoaivjzcxvbiohtvuqxizfqhydawfhqqfjnldfcnydurxvgcnpzmpqvuxadzkyohqkuoutvjuxtspabueclawllwzs
-        type: string
+        description: 'The email of the parent.'
+        required: false
+        example: eyad@gmail.com
+        type: required
         custom: []
     responses: []
     responseFields:
@@ -57,16 +57,16 @@ endpoints:
     bodyParameters:
       id:
         name: id
-        description: 'This field is required when <code>name</code> is not present. Must not be greater than 255 characters.'
+        description: ''
         required: false
-        example: fizfpamdloypuvtagdtfagpleunocbqrieldiqwxmvqafpbxljsdlblwlhyfkrpu
-        type: string
+        example: '9'
+        type: .
         custom: []
       name:
         name: name
         description: 'This field is required when <code>id</code> is not present. Must not be greater than 255 characters.'
         required: false
-        example: sgxlcgigphi
+        example: zmsxuqojfdsywwnxttdyfasndchafax
         type: string
         custom: []
     responses:

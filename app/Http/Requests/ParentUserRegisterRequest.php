@@ -4,6 +4,12 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+
+/**
+ * @bodyParam name required name of the parent. Example: Eyad
+ * @bodyParam email required The email of the parent. Example: eyad@gmail.com
+ */
+
 class ParentUserRegisterRequest extends FormRequest
 {
     public function rules(): array

@@ -21,10 +21,10 @@ endpoints:
     bodyParameters:
       id:
         name: id
-        description: ''
-        required: true
-        example: qui
-        type: string
+        description: 'id of the parent.'
+        required: false
+        example: '9'
+        type: The
         custom: []
     responses: []
     responseFields: []
@@ -47,7 +47,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":5,"name":"Abigayle Kihn I","email":"christopher.ruecker@example.com"},{"id":6,"name":"Dr. Burnice Boyle Sr.","email":"teagan.shanahan@example.org"}]}'
+        content: '{"data":[{"id":28,"name":"Shayne Moore","email":"connor84@example.org"},{"id":29,"name":"Jordane Spinka","email":"laisha.becker@example.org"}]}'
         headers: []
         description: '0'
       -
