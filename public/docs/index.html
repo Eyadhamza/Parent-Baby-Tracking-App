@@ -112,8 +112,8 @@
                                                     <li class="tocify-item level-2" data-unique="parents-api-POSTapi-parents-invite">
                         <a href="#parents-api-POSTapi-parents-invite">Invite a parent to be your partner.</a>
                     </li>
-                                    <li class="tocify-item level-2" data-unique="parents-api-GETapi-parents">
-                        <a href="#parents-api-GETapi-parents">Show Partner.</a>
+                                    <li class="tocify-item level-2" data-unique="parents-api-GETapi-parents-partner">
+                        <a href="#parents-api-GETapi-parents-partner">Show Partner.</a>
                     </li>
                                                     </ul>
                             </ul>
@@ -291,7 +291,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"id\": \"9\",
-    \"name\": \"zmsxuqojfdsywwnxttdyfasndchafax\"
+    \"name\": \"bkmaxsshvmtajhcpanqwmavhtusbtsomqpqcvgnqkgylqzof\"
 }"
 </code></pre></div>
 
@@ -308,7 +308,7 @@ const headers = {
 
 let body = {
     "id": "9",
-    "name": "zmsxuqojfdsywwnxttdyfasndchafax"
+    "name": "bkmaxsshvmtajhcpanqwmavhtusbtsomqpqcvgnqkgylqzof"
 };
 
 fetch(url, {
@@ -385,7 +385,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-parents-login"
-               value="zmsxuqojfdsywwnxttdyfasndchafax"
+               value="bkmaxsshvmtajhcpanqwmavhtusbtsomqpqcvgnqkgylqzof"
                data-component="body" hidden>
     <br>
 <p>This field is required when <code>id</code> is not present. Must not be greater than 255 characters.</p>
@@ -455,12 +455,12 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 38,
-            &quot;name&quot;: &quot;Mr. Dameon Williamson&quot;
+            &quot;id&quot;: 41,
+            &quot;name&quot;: &quot;Anika Runte&quot;
         },
         {
-            &quot;id&quot;: 39,
-            &quot;name&quot;: &quot;Mrs. June Kihn&quot;
+            &quot;id&quot;: 42,
+            &quot;name&quot;: &quot;Raven Kessler&quot;
         }
     ]
 }</code>
@@ -550,7 +550,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ilruih\"
+    \"name\": \"wjkvzkanbyfejpudeyqwxznjzopcgxlbdznlygnregzgfdnlnficjatgmishsuvltfmrvcrwjwrjsgxgythyseubkbniybfpkuqqystpad\"
 }"
 </code></pre></div>
 
@@ -567,7 +567,7 @@ const headers = {
 };
 
 let body = {
-    "name": "ilruih"
+    "name": "wjkvzkanbyfejpudeyqwxznjzopcgxlbdznlygnregzgfdnlnficjatgmishsuvltfmrvcrwjwrjsgxgythyseubkbniybfpkuqqystpad"
 };
 
 fetch(url, {
@@ -633,7 +633,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-babies"
-               value="ilruih"
+               value="wjkvzkanbyfejpudeyqwxznjzopcgxlbdznlygnregzgfdnlnficjatgmishsuvltfmrvcrwjwrjsgxgythyseubkbniybfpkuqqystpad"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -654,7 +654,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/babies/10" \
+    --get "http://127.0.0.1:8000/api/babies/19" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -662,7 +662,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/babies/10"
+    "http://127.0.0.1:8000/api/babies/19"
 );
 
 const headers = {
@@ -686,8 +686,8 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 40,
-        &quot;name&quot;: &quot;Kellie Boyle&quot;
+        &quot;id&quot;: 43,
+        &quot;name&quot;: &quot;Keyshawn Hauck MD&quot;
     }
 }</code>
  </pre>
@@ -754,7 +754,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="GETapi-babies--id-"
-               value="10"
+               value="19"
                data-component="url" hidden>
     <br>
 <p>The ID of the baby.</p>
@@ -783,19 +783,19 @@ Return a one App\Models\Baby by id</p>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8000/api/babies/16" \
+    "http://127.0.0.1:8000/api/babies/5" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"poivbvgpmmlolzsuvpmngvnsldhpxcdyzlbnqzxcfxupwyenekqujriiqidleohomdjsuyspjtbintaxzxunnugtncioemnulaogsqizoowujjyudcxmcqiqlvgfsjxojfamzmqeqvsspjdtnzraswaovogibppjpxpyqnfqg\"
+    \"name\": \"eboijurudjzmgjvjjpwjedsdglcjlmqmmymlluoysksaccbde\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/babies/16"
+    "http://127.0.0.1:8000/api/babies/5"
 );
 
 const headers = {
@@ -805,7 +805,7 @@ const headers = {
 };
 
 let body = {
-    "name": "poivbvgpmmlolzsuvpmngvnsldhpxcdyzlbnqzxcfxupwyenekqujriiqidleohomdjsuyspjtbintaxzxunnugtncioemnulaogsqizoowujjyudcxmcqiqlvgfsjxojfamzmqeqvsspjdtnzraswaovogibppjpxpyqnfqg"
+    "name": "eboijurudjzmgjvjjpwjedsdglcjlmqmmymlluoysksaccbde"
 };
 
 fetch(url, {
@@ -875,7 +875,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="PUTapi-babies--id-"
-               value="16"
+               value="5"
                data-component="url" hidden>
     <br>
 <p>The ID of the baby.</p>
@@ -886,7 +886,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="PUTapi-babies--id-"
-               value="poivbvgpmmlolzsuvpmngvnsldhpxcdyzlbnqzxcfxupwyenekqujriiqidleohomdjsuyspjtbintaxzxunnugtncioemnulaogsqizoowujjyudcxmcqiqlvgfsjxojfamzmqeqvsspjdtnzraswaovogibppjpxpyqnfqg"
+               value="eboijurudjzmgjvjjpwjedsdglcjlmqmmymlluoysksaccbde"
                data-component="body" hidden>
     <br>
 <p>Must not be greater than 255 characters.</p>
@@ -907,7 +907,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8000/api/babies/13" \
+    "http://127.0.0.1:8000/api/babies/16" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -915,7 +915,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/babies/13"
+    "http://127.0.0.1:8000/api/babies/16"
 );
 
 const headers = {
@@ -986,7 +986,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="DELETEapi-babies--id-"
-               value="13"
+               value="16"
                data-component="url" hidden>
     <br>
 <p>The ID of the baby.</p>
@@ -1106,7 +1106,7 @@ fetch(url, {
         </p>
         </form>
 
-            <h2 id="parents-api-GETapi-parents">Show Partner.</h2>
+            <h2 id="parents-api-GETapi-parents-partner">Show Partner.</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -1114,13 +1114,13 @@ fetch(url, {
 
 
 
-<span id="example-requests-GETapi-parents">
+<span id="example-requests-GETapi-parents-partner">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/parents" \
+    --get "http://127.0.0.1:8000/api/parents/partner" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1128,7 +1128,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/parents"
+    "http://127.0.0.1:8000/api/parents/partner"
 );
 
 const headers = {
@@ -1144,7 +1144,7 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-parents">
+<span id="example-responses-GETapi-parents-partner">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
@@ -1153,14 +1153,14 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 28,
-            &quot;name&quot;: &quot;Shayne Moore&quot;,
-            &quot;email&quot;: &quot;connor84@example.org&quot;
+            &quot;id&quot;: 30,
+            &quot;name&quot;: &quot;Devin Zulauf&quot;,
+            &quot;email&quot;: &quot;fermin.ohara@example.org&quot;
         },
         {
-            &quot;id&quot;: 29,
-            &quot;name&quot;: &quot;Jordane Spinka&quot;,
-            &quot;email&quot;: &quot;laisha.becker@example.org&quot;
+            &quot;id&quot;: 31,
+            &quot;name&quot;: &quot;Jessy Mueller&quot;,
+            &quot;email&quot;: &quot;laurianne82@example.org&quot;
         }
     ]
 }</code>
@@ -1175,51 +1175,51 @@ fetch(url, {
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-parents" hidden>
+<span id="execution-results-GETapi-parents-partner" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-parents"></span>:
+                id="execution-response-status-GETapi-parents-partner"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-parents"></code></pre>
+    <pre class="json"><code id="execution-response-content-GETapi-parents-partner"></code></pre>
 </span>
-<span id="execution-error-GETapi-parents" hidden>
+<span id="execution-error-GETapi-parents-partner" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-parents"></code></pre>
+    <pre><code id="execution-error-message-GETapi-parents-partner"></code></pre>
 </span>
-<form id="form-GETapi-parents" data-method="GET"
-      data-path="api/parents"
+<form id="form-GETapi-parents-partner" data-method="GET"
+      data-path="api/parents/partner"
       data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-parents', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-parents-partner', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-parents"
-                    onclick="tryItOut('GETapi-parents');">Try it out ⚡
+                    id="btn-tryout-GETapi-parents-partner"
+                    onclick="tryItOut('GETapi-parents-partner');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-parents"
-                    onclick="cancelTryOut('GETapi-parents');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-parents-partner"
+                    onclick="cancelTryOut('GETapi-parents-partner');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-parents" hidden>Send Request 💥
+                    id="btn-executetryout-GETapi-parents-partner" hidden>Send Request 💥
             </button>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/parents</code></b>
+            <b><code>api/parents/partner</code></b>
         </p>
                 <p>
-            <label id="auth-GETapi-parents" hidden>Authorization header:
+            <label id="auth-GETapi-parents-partner" hidden>Authorization header:
                 <b><code>Bearer </code></b><input type="text"
                                                                 name="Authorization"
                                                                 data-prefix="Bearer "
-                                                                data-endpoint="GETapi-parents"
+                                                                data-endpoint="GETapi-parents-partner"
                                                                 data-component="header"></label>
         </p>
                 </form>

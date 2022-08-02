@@ -25,8 +25,10 @@ class ParentUserController extends Controller
      */
     public function index()
     {
-
-        return new ParentUserResource(auth()->user()->partner);
+        if (auth()->user()->partner) {
+            return new ParentUserResource(auth()->user()->partner);
+        }
+        return notFoundResponse();
     }
 
     /**
@@ -40,6 +42,7 @@ class ParentUserController extends Controller
             auth()
                 ->user()
                 ->invite($data['id']);
+
         } catch (\Exception $e) {
             return validationFailed($e->getMessage());
         }

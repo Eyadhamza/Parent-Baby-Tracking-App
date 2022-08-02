@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Parent Baby Tracking - API Documentation",
-        "_postman_id": "11fff67b-61f0-4063-a75c-febf9fcfeb95",
+        "_postman_id": "18daf983-b4cc-47ae-b15a-573c2d3db809",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"id\":\"9\",\"name\":\"zmsxuqojfdsywwnxttdyfasndchafax\"}"
+                            "raw": "{\"id\":\"9\",\"name\":\"bkmaxsshvmtajhcpanqwmavhtusbtsomqpqcvgnqkgylqzof\"}"
                         },
                         "description": "Allow the parentUser to Login",
                         "auth": {
@@ -121,7 +121,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":38,\"name\":\"Mr. Dameon Williamson\"},{\"id\":39,\"name\":\"Mrs. June Kihn\"}]}",
+                            "body": "{\"data\":[{\"id\":41,\"name\":\"Anika Runte\"},{\"id\":42,\"name\":\"Raven Kessler\"}]}",
                             "name": "0"
                         },
                         {
@@ -154,7 +154,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ilruih\"}"
+                            "raw": "{\"name\":\"wjkvzkanbyfejpudeyqwxznjzopcgxlbdznlygnregzgfdnlnficjatgmishsuvltfmrvcrwjwrjsgxgythyseubkbniybfpkuqqystpad\"}"
                         },
                         "description": ""
                     },
@@ -172,7 +172,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "10",
+                                    "value": "19",
                                     "description": "The ID of the baby."
                                 }
                             ]
@@ -195,7 +195,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":40,\"name\":\"Kellie Boyle\"}}",
+                            "body": "{\"data\":{\"id\":43,\"name\":\"Keyshawn Hauck MD\"}}",
                             "name": "0"
                         },
                         {
@@ -218,7 +218,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "16",
+                                    "value": "5",
                                     "description": "The ID of the baby."
                                 }
                             ]
@@ -236,7 +236,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"poivbvgpmmlolzsuvpmngvnsldhpxcdyzlbnqzxcfxupwyenekqujriiqidleohomdjsuyspjtbintaxzxunnugtncioemnulaogsqizoowujjyudcxmcqiqlvgfsjxojfamzmqeqvsspjdtnzraswaovogibppjpxpyqnfqg\"}"
+                            "raw": "{\"name\":\"eboijurudjzmgjvjjpwjedsdglcjlmqmmymlluoysksaccbde\"}"
                         },
                         "description": ""
                     },
@@ -254,7 +254,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "13",
+                                    "value": "16",
                                     "description": "The ID of the baby."
                                 }
                             ]
@@ -314,9 +314,9 @@
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/parents",
+                            "path": "api\/parents\/partner",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/parents"
+                            "raw": "{{baseUrl}}\/api\/parents\/partner"
                         },
                         "method": "GET",
                         "header": [
@@ -336,7 +336,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":28,\"name\":\"Shayne Moore\",\"email\":\"connor84@example.org\"},{\"id\":29,\"name\":\"Jordane Spinka\",\"email\":\"laisha.becker@example.org\"}]}",
+                            "body": "{\"data\":[{\"id\":30,\"name\":\"Devin Zulauf\",\"email\":\"fermin.ohara@example.org\"},{\"id\":31,\"name\":\"Jessy Mueller\",\"email\":\"laurianne82@example.org\"}]}",
                             "name": "0"
                         },
                         {

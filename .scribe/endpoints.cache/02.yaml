@@ -33,7 +33,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/parents
+    uri: api/parents/partner
     metadata:
       title: 'Show Partner.'
       description: ''
@@ -49,7 +49,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":28,"name":"Shayne Moore","email":"connor84@example.org"},{"id":29,"name":"Jordane Spinka","email":"laisha.becker@example.org"}]}'
+        content: '{"data":[{"id":30,"name":"Devin Zulauf","email":"fermin.ohara@example.org"},{"id":31,"name":"Jessy Mueller","email":"laurianne82@example.org"}]}'
         headers: []
         description: '0'
       -

@@ -29,7 +29,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::post('/parents/invite', [ParentUserController::class, 'invite'])
         ->name('parents.invite');
-    Route::get('/parents', [ParentUserController::class, 'index'])
+    Route::get('/parents/partner', [ParentUserController::class, 'index'])
         ->name('parents.index');
 });
 
