@@ -25,7 +25,7 @@ class ParentUserController extends Controller
      */
     public function index()
     {
-        return auth()->user();
+
         return new ParentUserResource(auth()->user()->partner);
     }
 
