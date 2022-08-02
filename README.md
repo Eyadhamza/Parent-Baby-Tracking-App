@@ -4,7 +4,7 @@ Parent Baby Tracking API
 1. For Postman Collection use the link below:
    - [POSTMAN Collection](BASE_URL/docs/collection.json)
 2. For openapi specification  use the link below:
-    - [POSTMAN Collection](BASE_URL/docs/openapi.yaml)
+    - [Openapi specification](BASE_URL/docs/openapi.yaml)
 
 ### Testing
 1. For In Browser Testing use the link below:
