@@ -34,10 +34,7 @@ class ParentUserManagementTest extends TestCase
         $this->actingAs($parentUser);
 
         $this->postJson(route('parents.invite'), $parentUser->toArray())
-            ->assertStatus(400)
-            ->assertJson([
-                'message' => 'You can not invite yourself',
-            ]);
+            ->assertStatus(422);
     }
 
     public function test_a_user_parent_can_show_his_partner()

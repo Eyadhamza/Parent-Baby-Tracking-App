@@ -33,13 +33,19 @@ class ParentUser extends Authenticatable
         return $this->belongsToMany(Baby::class);
     }
 
+    /**
+     * @throws \Throwable
+     */
     public function invite(string $parentId): void
     {
+        throw_if($this->id == $parentId, \Exception::class, 'You can not invite yourself');
+
+        throw_if($this->partner_id, \Exception::class, 'You already have a partner');
+
         DB::transaction(function () use ($parentId) {
             $parent = ParentUser::findOrFail($parentId);
 
             $this->update(['partner_id' => $parent->id]);
-
             $this->partner()->save($parent);
 
         });

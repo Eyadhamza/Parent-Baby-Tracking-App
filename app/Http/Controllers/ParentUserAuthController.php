@@ -47,8 +47,11 @@ class ParentUserAuthController extends Controller
     {
         $data = $request->validated();
 
-        $parentUser = ParentUser::where(key($data), $data[key($data)])->firstOrFail();
+        $parentUser = ParentUser::where(key($data), $data[key($data)])->first();
 
+        if (!$parentUser) {
+            return notFoundResponse();
+        }
 
         $token = $parentUser
             ->createToken('auth_token');

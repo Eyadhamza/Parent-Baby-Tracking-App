@@ -65,3 +65,14 @@ if (!function_exists('deletedSuccessfullyResponse')) {
             ], 200);
     }
 }
+if (!function_exists('notFoundResponse')) {
+    function notFoundResponse(string $message = null): JsonResponse
+    {
+        return response()
+            ->json([
+                'data' => [
+                    'message' => $message ?? 'Resource Not Found',
+                ],
+            ], 404);
+    }
+}

@@ -11,7 +11,6 @@ use App\Models\ParentUser;
  *
  * API for parents to manage their partner
  */
-
 class ParentUserController extends Controller
 {
     /**
@@ -26,6 +25,7 @@ class ParentUserController extends Controller
      */
     public function index()
     {
+        return auth()->user();
         return new ParentUserResource(auth()->user()->partner);
     }
 
@@ -36,14 +36,13 @@ class ParentUserController extends Controller
     {
         $data = $request->validated();
 
-        if (auth()->user()->id == $data['id']) {
-            return response()->json([
-                'message' => 'You can not invite yourself',
-            ], 400);
+        try {
+            auth()
+                ->user()
+                ->invite($data['id']);
+        } catch (\Exception $e) {
+            return validationFailed($e->getMessage());
         }
-       auth()
-            ->user()
-            ->invite($data['id']);
 
         return response()->json(['message' => 'Invitation sent']);
     }
