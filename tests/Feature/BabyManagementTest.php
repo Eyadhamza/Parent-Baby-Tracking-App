@@ -16,7 +16,7 @@ class BabyManagementTest extends TestCase
         $this->withoutExceptionHandling();
 
         $parentUser = ParentUser::factory()->create();
-        $this->actingAs($parentUser);
+        $this->actingAs($parentUser,'sanctum');
 
         $baby = Baby::factory()->make();
 
@@ -36,7 +36,7 @@ class BabyManagementTest extends TestCase
         $this->withoutExceptionHandling();
 
         $parentUser = ParentUser::factory()->create();
-        $this->actingAs($parentUser);
+        $this->actingAs($parentUser,'sanctum');
 
         $baby = Baby::factory()->create();
 
@@ -65,7 +65,7 @@ class BabyManagementTest extends TestCase
         $this->withoutExceptionHandling();
 
         $parentUser = ParentUser::factory()->create();
-        $this->actingAs($parentUser);
+        $this->actingAs($parentUser,'sanctum');
 
         $baby = Baby::factory()->create();
 
@@ -89,7 +89,7 @@ class BabyManagementTest extends TestCase
         $this->withoutExceptionHandling();
 
         $parentUser = ParentUser::factory()->create();
-        $this->actingAs($parentUser);
+        $this->actingAs($parentUser,'sanctum');
 
         $baby = Baby::factory()->create();
         $this->getJson(route('babies.show', $baby))
@@ -100,7 +100,29 @@ class BabyManagementTest extends TestCase
                     'name' => $baby->name,
                 ],
             ]);
+    }
+    public function test_can_list_all_babies()
+    {
+        $this->withoutExceptionHandling();
 
+        $parentUser = ParentUser::factory()->create();
+        $this->actingAs($parentUser,'sanctum');
 
+        $babies = Baby::factory()->count(2)->create();
+
+        $this->getJson(route('babies.index'))
+            ->assertStatus(200)
+            ->assertJson([
+                'data' => [
+                    [
+                        'id' => $babies[0]->id,
+                        'name' => $babies[0]->name,
+                    ],
+                    [
+                        'id' => $babies[1]->id,
+                        'name' => $babies[1]->name,
+                    ],
+                ],
+            ]);
     }
 }
