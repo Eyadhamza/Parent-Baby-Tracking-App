@@ -25,12 +25,10 @@ Route::post('parents/login', [ParentUserAuthController::class, 'login'])
 
 
 Route::middleware('auth:sanctum')->group(function () {
-
     Route::apiResource('/babies', BabyController::class);
 
     Route::post('/parents/invite', [ParentUserController::class, 'invite'])
         ->name('parents.invite');
-
     Route::get('/parents', [ParentUserController::class, 'index'])
         ->name('parents.index');
 });

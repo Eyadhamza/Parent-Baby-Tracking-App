@@ -25,13 +25,6 @@ if (!function_exists('grantToken')) {
             ]);
     }
 }
-if (!function_exists('canLogin')) {
-    function canLogin($guard, array $credentials, $remember = null)
-    {
-        return auth($guard)
-            ->attempt(request()->only($credentials, $remember));
-    }
-}
 if (!function_exists('unauthorized')) {
     function unauthorized()
     {
@@ -70,20 +63,5 @@ if (!function_exists('deletedSuccessfullyResponse')) {
                     'message' => $message ?? 'Resource Deleted Successfully',
                 ],
             ], 200);
-    }
-}
-
-if (!function_exists('guard')) {
-    function guard()
-    {
-        return config('fortify.guard') ?? auth()->guard();
-    }
-}
-if (!function_exists('withGuardPrefix')) {
-    function withGuardPrefix(string $path = ''): string
-    {
-        $guard = guard();
-
-        return $guard . '.' . $path;
     }
 }
