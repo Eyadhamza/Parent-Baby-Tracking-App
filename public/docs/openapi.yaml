@@ -1,0 +1,464 @@
+openapi: 3.0.3
+info:
+  title: 'Parent Baby Tracking - API Documentation'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://127.0.0.1:8000'
+paths:
+  /api/parents/register:
+    post:
+      summary: 'Register a ParentUser.'
+      description: 'Allow the parentUser to Register'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Auth Parents API'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: qvnpvtkcemynkhojepfxwmpxwncbykiwyyjmmnezbfoozqhzwlmaaiiljijbmdmspdexilbppgquqiixzyvkocouhekhsocsszytmphtivwxpkchmrzfngpqajxgeomswfiocxmpypqiglffscckqnannuqidvbsu
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: yzmubwszcsqobcziwtexnzlsjgrdbfqddkpskgharcaevgdrlyeidgubtwmjyqppstvfudvbxxotqeyginwwxsxhfexkonmqbhgworzusvirdhesccrilzdqnwavsvxkmtxeexrfbnpmdwuiswrabokbyfrsacpjpadflflgjqmqymfcwnyherdhdoeswqdhsfhlsfbrpxvagdktlqzavpzcyncbreaeeqvphzpbughf
+              required:
+                - name
+                - email
+      security: []
+  /api/parents/login:
+    post:
+      summary: 'Login a ParentUser.'
+      description: 'Allow the parentUser to Login'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: Unauthenticated
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: Unauthorized
+                properties:
+                  error:
+                    type: string
+                    example: Unauthorized
+      tags:
+        - 'Auth Parents API'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: 'This field is required when <code>name</code> is not present. Must not be greater than 255 characters.'
+                  example: dfyjfhxzgkeerrhbdmpzmiwzdljvlhahiqpsfufkkjkozoffyyztyrhlsyjavyggkwirpnvoftdbvhkaljutxbntauljpwgaekqevbgnbiabctkzsyswupidwtjjwosxyhmxpkxfqtubdnsptrlmbmkbupnvjzvyituvlhjzbeiigjmjefuehmokengzvzpzqyqjd
+                name:
+                  type: string
+                  description: 'This field is required when <code>id</code> is not present. Must not be greater than 255 characters.'
+                  example: yqbeshtdzewnghblzirirrnzfkhaquwnzanyvrztjsmwkkppixerlymddtzedxkxxeiyglpwbhwkmdfaxingfwkiurcmodilmoesjunkxjjudrexffykvcmppokknrqiuoupgfaddhbrbghxribnujoxxeszdjotzssbnpdjyzpaamxodcwxswmzopmurwxrxjjfannlpgmmuepjzponmwggtywoojqlzi
+      security: []
+  /api/babies:
+    get:
+      summary: 'All Babies.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: null
+                      name: 'Trevor Raynor DVM'
+                    -
+                      id: null
+                      name: 'Danial Blanda V'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: null
+                        name: 'Trevor Raynor DVM'
+                      -
+                        id: null
+                        name: 'Danial Blanda V'
+                    description: '"list of all Babies"'
+                    items:
+                      type: object
+        401:
+          description: Unauthenticated
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated
+      tags:
+        - 'Baby Resource'
+    post:
+      summary: 'Store a Baby.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Baby Resource'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: lctzwgypmybufhajaxftrmnljjxubasggdwrpqedmpthjvpkfzmhpbrygqjptvoevmhdjkoaymacwvcwmyfmflqjkhuljpghbbdobgjujgcggtbbygaabhoxzmssgqhlajxmuixzlaauatvdziuvgwusekxoshbcqnxkyequhzpqhokrqbmmjnopvcujlvrnnnpagechobfriglpvivronadtggarrdndlebl
+              required:
+                - name
+  '/api/babies/{id}':
+    get:
+      summary: 'Show Baby.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: null
+                    name: 'Kayla Eichmann'
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: null
+                      name: 'Kayla Eichmann'
+                    description: "\" App\\Models\\Baby Info\"\nReturn a one App\\Models\\Baby by id"
+        401:
+          description: Unauthenticated
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated
+      tags:
+        - 'Baby Resource'
+    put:
+      summary: 'Update a specified Baby.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Baby Resource'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: rrvyhfjjeqhccopnnuftzhtrkoqtggajztvtjlmnurdgqzfdrlhpwpbcxudpdvjawpvtrryiqyhogyxwlmmykdnnmfpjqgcyvfbckcazvwbqoleldiyvqqwclcqdfajgbayolrazydyrkhoivxpnmcfabcvfjcccwqkqenxecgawiqoddjuxoijtrdzoymnlpjaqrnptnvmbktcaeuflrqvkccmpjwansrfjbnwctxwyxkiacjydp
+              required:
+                - name
+    delete:
+      summary: 'Remove a specified Baby.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Baby Resource'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the baby.'
+        example: 3
+        required: true
+        schema:
+          type: integer
+  /api/parents/invite:
+    post:
+      summary: 'Invite a parent to be your partner.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Parents API'
+  /api/parents:
+    get:
+      summary: 'Show Partner.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: null
+                      name: 'Frederick Koch'
+                      email: euna49@example.net
+                    -
+                      id: null
+                      name: 'Porter Kutch'
+                      email: emmerich.laverna@example.org
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: null
+                        name: 'Frederick Koch'
+                        email: euna49@example.net
+                      -
+                        id: null
+                        name: 'Porter Kutch'
+                        email: emmerich.laverna@example.org
+                    items:
+                      type: object
+        401:
+          description: Unauthenticated
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated
+      tags:
+        - 'Parents API'
+tags:
+  -
+    name: 'Auth Parents API'
+    description: ''
+  -
+    name: 'Baby Resource'
+    description: "\nAPIs for Baby Resource Management"
+  -
+    name: 'Parents API'
+    description: "\nAPI for parents to manage their partner"
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: ''
+security:
+  -
+    default: []

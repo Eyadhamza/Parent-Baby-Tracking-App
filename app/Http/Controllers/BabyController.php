@@ -68,7 +68,7 @@ class BabyController extends Controller
     }
 
     /**
-     * Update a specified Baby - Not Implemented.
+     * Update a specified Baby.
      */
     public function update(BabyStoreRequest $request, Baby $baby): JsonResponse
     {
@@ -76,7 +76,6 @@ class BabyController extends Controller
 
         if (auth()->check()) {
             $baby->update($data);
-
             return updatedSuccessfullyResponse();
         }
 
@@ -84,7 +83,7 @@ class BabyController extends Controller
     }
 
     /**
-     * Remove a specified Baby - Not Implemented.
+     * Remove a specified Baby.
      */
     public function destroy(Baby $baby): JsonResponse
     {
@@ -92,7 +91,6 @@ class BabyController extends Controller
             $baby->delete();
             return deletedSuccessfullyResponse();
         }
-
         return validationFailed('Unauthenticated');
     }
 }

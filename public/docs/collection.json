@@ -1,0 +1,353 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/127.0.0.1:8000"
+        }
+    ],
+    "info": {
+        "name": "Parent Baby Tracking - API Documentation",
+        "_postman_id": "e43d12c8-8a2b-4911-bbba-16d269395220",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Auth Parents API",
+            "description": "",
+            "item": [
+                {
+                    "name": "Register a ParentUser.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/parents\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/parents\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"qvnpvtkcemynkhojepfxwmpxwncbykiwyyjmmnezbfoozqhzwlmaaiiljijbmdmspdexilbppgquqiixzyvkocouhekhsocsszytmphtivwxpkchmrzfngpqajxgeomswfiocxmpypqiglffscckqnannuqidvbsu\",\"email\":\"yzmubwszcsqobcziwtexnzlsjgrdbfqddkpskgharcaevgdrlyeidgubtwmjyqppstvfudvbxxotqeyginwwxsxhfexkonmqbhgworzusvirdhesccrilzdqnwavsvxkmtxeexrfbnpmdwuiswrabokbyfrsacpjpadflflgjqmqymfcwnyherdhdoeswqdhsfhlsfbrpxvagdktlqzavpzcyncbreaeeqvphzpbughf\"}"
+                        },
+                        "description": "Allow the parentUser to Register",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Login a ParentUser.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/parents\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/parents\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"id\":\"dfyjfhxzgkeerrhbdmpzmiwzdljvlhahiqpsfufkkjkozoffyyztyrhlsyjavyggkwirpnvoftdbvhkaljutxbntauljpwgaekqevbgnbiabctkzsyswupidwtjjwosxyhmxpkxfqtubdnsptrlmbmkbupnvjzvyituvlhjzbeiigjmjefuehmokengzvzpzqyqjd\",\"name\":\"yqbeshtdzewnghblzirirrnzfkhaquwnzanyvrztjsmwkkppixerlymddtzedxkxxeiyglpwbhwkmdfaxingfwkiurcmodilmoesjunkxjjudrexffykvcmppokknrqiuoupgfaddhbrbghxribnujoxxeszdjotzssbnpdjyzpaamxodcwxswmzopmurwxrxjjfannlpgmmuepjzponmwggtywoojqlzi\"}"
+                        },
+                        "description": "Allow the parentUser to Login",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\"error\": \"Unauthorized\"}",
+                            "name": "Unauthenticated"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Baby Resource",
+            "description": "\nAPIs for Baby Resource Management",
+            "item": [
+                {
+                    "name": "All Babies.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/babies",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/babies"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":null,\"name\":\"Trevor Raynor DVM\"},{\"id\":null,\"name\":\"Danial Blanda V\"}]}",
+                            "name": "0"
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\"message\": \"Unauthenticated\"}",
+                            "name": "Unauthenticated"
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a Baby.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/babies",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/babies"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"lctzwgypmybufhajaxftrmnljjxubasggdwrpqedmpthjvpkfzmhpbrygqjptvoevmhdjkoaymacwvcwmyfmflqjkhuljpghbbdobgjujgcggtbbygaabhoxzmssgqhlajxmuixzlaauatvdziuvgwusekxoshbcqnxkyequhzpqhokrqbmmjnopvcujlvrnnnpagechobfriglpvivronadtggarrdndlebl\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Show Baby.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/babies\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/babies\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "3",
+                                    "description": "The ID of the baby."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":null,\"name\":\"Kayla Eichmann\"}}",
+                            "name": "0"
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\"message\": \"Unauthenticated\"}",
+                            "name": "Unauthenticated"
+                        }
+                    ]
+                },
+                {
+                    "name": "Update a specified Baby.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/babies\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/babies\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the baby."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"rrvyhfjjeqhccopnnuftzhtrkoqtggajztvtjlmnurdgqzfdrlhpwpbcxudpdvjawpvtrryiqyhogyxwlmmykdnnmfpjqgcyvfbckcazvwbqoleldiyvqqwclcqdfajgbayolrazydyrkhoivxpnmcfabcvfjcccwqkqenxecgawiqoddjuxoijtrdzoymnlpjaqrnptnvmbktcaeuflrqvkccmpjwansrfjbnwctxwyxkiacjydp\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove a specified Baby.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/babies\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/babies\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "16",
+                                    "description": "The ID of the baby."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Parents API",
+            "description": "\nAPI for parents to manage their partner",
+            "item": [
+                {
+                    "name": "Invite a parent to be your partner.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/parents\/invite",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/parents\/invite"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Show Partner.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/parents",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/parents"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":null,\"name\":\"Frederick Koch\",\"email\":\"euna49@example.net\"},{\"id\":null,\"name\":\"Porter Kutch\",\"email\":\"emmerich.laverna@example.org\"}]}",
+                            "name": "0"
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\"message\": \"Unauthenticated\"}",
+                            "name": "Unauthenticated"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer"
+    }
+}

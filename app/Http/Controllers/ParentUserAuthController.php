@@ -6,6 +6,12 @@ use App\Http\Requests\ParentUserLoginRequest;
 use App\Http\Requests\ParentUserRegisterRequest;
 use App\Models\ParentUser;
 
+/**
+ * @group Auth Parents
+ * @unauthenticated
+ * API for parents to log in and register
+ */
+
 class ParentUserAuthController extends Controller
 {
     /**
