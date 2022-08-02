@@ -17,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('parents/register', [ParentUserAuthController::class, 'register'])
+    ->name('parents.register');
+
+Route::post('parents/login', [ParentUserAuthController::class, 'login'])
+    ->name('parents.login');
+
 
 Route::middleware('auth:sanctum')->group(function () {
 
@@ -27,11 +33,5 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/parents', [ParentUserController::class, 'index'])
         ->name('parents.index');
-
-    Route::post('parent/register', [ParentUserAuthController::class, 'register'])
-        ->name('parent.register');
-
-    Route::post('parent/login', [ParentUserAuthController::class, 'login'])
-        ->name('parent.login');
 });
 

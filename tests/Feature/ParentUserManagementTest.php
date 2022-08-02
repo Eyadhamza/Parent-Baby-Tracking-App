@@ -58,4 +58,16 @@ class ParentUserManagementTest extends TestCase
                     ],
             ]);
     }
+    public function test_a_user_parent_can_register_with_his_name_or_id()
+    {
+        $this->withoutExceptionHandling();
+
+        $this->postJson(route('parents.register'), [
+            'id' => '12345',
+            'name' => 'John Doe',
+        ])->assertStatus(200)
+            ->assertJson([
+                'message' => 'You are now registered',
+            ]);
+    }
 }

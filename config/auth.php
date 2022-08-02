@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'api-users',
-        'passwords' => 'parent_users',
+        'guard' => 'web',
+        'passwords' => 'users',
     ],
 
     /*
@@ -31,14 +31,20 @@ return [
     | users are actually retrieved out of your database or other storage
     | mechanisms used by this application to persist your user's data.
     |
-    | Supported: "session"
+    | Supported: "session", "token"
     |
     */
 
     'guards' => [
-        'api-users' => [
-            'driver' => 'sanctum',
+        'web' => [
+            'driver' => 'session',
             'provider' => 'parent_users',
+        ],
+
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+            'hash' => false,
         ],
     ],
 
@@ -60,11 +66,15 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'parent_users' => [
             'driver' => 'eloquent',
             'model' => App\Models\ParentUser::class,
         ],
 
+        // 'users' => [
+        //     'driver' => 'database',
+        //     'table' => 'users',
+        // ],
     ],
 
     /*
@@ -76,14 +86,14 @@ return [
     | than one user table or model in the application and you want to have
     | separate password reset settings based on the specific user types.
     |
-    | The expire time is the number of minutes that each reset token will be
+    | The expire time is the number of minutes that the reset token should be
     | considered valid. This security feature keeps tokens short-lived so
     | they have less time to be guessed. You may change this as needed.
     |
     */
 
     'passwords' => [
-        'users' => [
+        'parent_users' => [
             'provider' => 'parent_users',
             'table' => 'password_resets',
             'expire' => 60,
