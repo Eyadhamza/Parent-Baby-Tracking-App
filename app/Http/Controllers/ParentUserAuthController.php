@@ -26,7 +26,6 @@ class ParentUserAuthController extends Controller
     {
         $data = $request->validated();
 
-
         $parentUser = ParentUser::create($data);
 
         $token = $parentUser

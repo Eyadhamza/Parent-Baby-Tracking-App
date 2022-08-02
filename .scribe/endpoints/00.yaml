@@ -1,161 +1,86 @@
-name: 'Baby Resource'
-description: |-
-
-  APIs for Baby Resource Management
+name: 'Auth Parents'
+description: ''
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/babies
+      - POST
+    uri: api/parents/register
     metadata:
-      title: 'All Babies.'
-      description: ''
-      authenticated: true
+      title: 'Register a ParentUser.'
+      description: 'Allow the parentUser to Register'
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
     queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":[{"id":null,"name":"Trevor Raynor DVM"},{"id":null,"name":"Danial Blanda V"}]}'
-        headers: []
-        description: '0'
-      -
-        status: 401
-        content: '{"message": "Unauthenticated"}'
-        headers: []
-        description: '401, Unauthenticated'
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: fcjdyctwrtseclttzxihpzwfkxwforkrtosynwhkryjxvkhswduookejtxavaszybdauvmkrzsftqbkdcitgcphhbmhflchrvretophsxouxwffudoljroiazggburjgcnnmvoepbnvfeuvplhalscadreqpixctptszpqmgehyiljcbltjhzjbbykkgptyucsonhaerqqfumaoykpetuezywqgllimfcewmwagfnb
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address. Must not be greater than 255 characters.'
+        required: true
+        example: uckxairtezusyhnljzupefoohwnuczcfycdkmqviaxdrxnqhdarucpmdnakbiuoqrgivnyspkpfvclehottvjgurkoaqirqfoyhvhlggqfcvriuyxxxlanhxybiikmhanjcoaivjzcxvbiohtvuqxizfqhydawfhqqfjnldfcnydurxvgcnpzmpqvuxadzkyohqkuoutvjuxtspabueclawllwzs
+        type: string
+        custom: []
+    responses: []
     responseFields:
-      data:
-        name: data
-        description: '"list of all Babies"'
-        type: 'string[][]'
+      token_type:
+        name: token_type
+        description: '"Bearer"'
+        type: ''
+      token:
+        name: token
+        description: '"Token"'
+        type: ''
   -
     httpMethods:
       - POST
-    uri: api/babies
+    uri: api/parents/login
     metadata:
-      title: 'Store a Baby.'
-      description: ''
-      authenticated: true
+      title: 'Login a ParentUser.'
+      description: 'Allow the parentUser to Login'
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
     queryParameters: []
     bodyParameters:
-      name:
-        name: name
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: lctzwgypmybufhajaxftrmnljjxubasggdwrpqedmpthjvpkfzmhpbrygqjptvoevmhdjkoaymacwvcwmyfmflqjkhuljpghbbdobgjujgcggtbbygaabhoxzmssgqhlajxmuixzlaauatvdziuvgwusekxoshbcqnxkyequhzpqhokrqbmmjnopvcujlvrnnnpagechobfriglpvivronadtggarrdndlebl
-        type: string
-        custom: []
-    responses: []
-    responseFields: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/babies/{id}'
-    metadata:
-      title: 'Show Baby.'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
       id:
         name: id
-        description: 'The ID of the baby.'
-        required: true
-        example: 3
-        type: integer
+        description: 'This field is required when <code>name</code> is not present. Must not be greater than 255 characters.'
+        required: false
+        example: fizfpamdloypuvtagdtfagpleunocbqrieldiqwxmvqafpbxljsdlblwlhyfkrpu
+        type: string
         custom: []
-    queryParameters: []
-    bodyParameters: []
+      name:
+        name: name
+        description: 'This field is required when <code>id</code> is not present. Must not be greater than 255 characters.'
+        required: false
+        example: sgxlcgigphi
+        type: string
+        custom: []
     responses:
       -
-        status: 200
-        content: '{"data":{"id":null,"name":"Kayla Eichmann"}}'
-        headers: []
-        description: '0'
-      -
         status: 401
-        content: '{"message": "Unauthenticated"}'
+        content: '{"error": "Unauthorized"}'
         headers: []
         description: '401, Unauthenticated'
     responseFields:
-      data:
-        name: data
-        description: |-
-          " App\Models\Baby Info"
-          Return a one App\Models\Baby by id
-        type: object
-  -
-    httpMethods:
-      - PUT
-      - PATCH
-    uri: 'api/babies/{id}'
-    metadata:
-      title: 'Update a specified Baby.'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the baby.'
-        required: true
-        example: 1
-        type: integer
-        custom: []
-    queryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: rrvyhfjjeqhccopnnuftzhtrkoqtggajztvtjlmnurdgqzfdrlhpwpbcxudpdvjawpvtrryiqyhogyxwlmmykdnnmfpjqgcyvfbckcazvwbqoleldiyvqqwclcqdfajgbayolrazydyrkhoivxpnmcfabcvfjcccwqkqenxecgawiqoddjuxoijtrdzoymnlpjaqrnptnvmbktcaeuflrqvkccmpjwansrfjbnwctxwyxkiacjydp
-        type: string
-        custom: []
-    responses: []
-    responseFields: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/babies/{id}'
-    metadata:
-      title: 'Remove a specified Baby.'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the baby.'
-        required: true
-        example: 16
-        type: integer
-        custom: []
-    queryParameters: []
-    bodyParameters: []
-    responses: []
-    responseFields: []
+      token_type:
+        name: token_type
+        description: '"Bearer"'
+        type: ''
+      token:
+        name: token
+        description: '"Token"'
+        type: ''

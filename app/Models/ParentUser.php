@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\HasApiTokens;
 
 class ParentUser extends Authenticatable
@@ -19,6 +20,7 @@ class ParentUser extends Authenticatable
         'id',
         'name',
         'email',
+        'partner_id'
     ];
 
     public function partner(): HasOne
@@ -33,7 +35,13 @@ class ParentUser extends Authenticatable
 
     public function invite(string $parentId): void
     {
-        $this->partner()->save(ParentUser::find($parentId));
-        $this->save();
+        DB::transaction(function () use ($parentId) {
+            $parent = ParentUser::findOrFail($parentId);
+
+            $this->update(['partner_id' => $parent->id]);
+
+            $this->partner()->save($parent);
+
+        });
     }
 }

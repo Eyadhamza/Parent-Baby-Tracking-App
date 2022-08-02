@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\InviteParentRequest;
 use App\Http\Resources\ParentUserResource;
 use App\Models\ParentUser;
 
@@ -31,16 +32,18 @@ class ParentUserController extends Controller
     /**
      * Invite a parent to be your partner.
      */
-    public function invite()
+    public function invite(InviteParentRequest $request)
     {
-        if (auth()->user()->id == request('id')) {
+        $data = $request->validated();
+
+        if (auth()->user()->id == $data['id']) {
             return response()->json([
                 'message' => 'You can not invite yourself',
             ], 400);
         }
-        auth()
+       auth()
             ->user()
-            ->invite(request('id'));
+            ->invite($data['id']);
 
         return response()->json(['message' => 'Invitation sent']);
     }

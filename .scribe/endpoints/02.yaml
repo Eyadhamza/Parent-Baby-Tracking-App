@@ -1,0 +1,58 @@
+name: 'Parents API'
+description: |-
+
+  API for parents to manage their partner
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/parents/invite
+    metadata:
+      title: 'Invite a parent to be your partner.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      id:
+        name: id
+        description: ''
+        required: true
+        example: qui
+        type: string
+        custom: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/parents
+    metadata:
+      title: 'Show Partner.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":5,"name":"Abigayle Kihn I","email":"christopher.ruecker@example.com"},{"id":6,"name":"Dr. Burnice Boyle Sr.","email":"teagan.shanahan@example.org"}]}'
+        headers: []
+        description: '0'
+      -
+        status: 401
+        content: '{"message": "Unauthenticated"}'
+        headers: []
+        description: '401, Unauthenticated'
+    responseFields: []

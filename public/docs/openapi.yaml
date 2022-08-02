@@ -28,7 +28,7 @@ paths:
             type: string
       responses: {  }
       tags:
-        - 'Auth Parents API'
+        - 'Auth Parents'
       requestBody:
         required: true
         content:
@@ -39,11 +39,11 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: qvnpvtkcemynkhojepfxwmpxwncbykiwyyjmmnezbfoozqhzwlmaaiiljijbmdmspdexilbppgquqiixzyvkocouhekhsocsszytmphtivwxpkchmrzfngpqajxgeomswfiocxmpypqiglffscckqnannuqidvbsu
+                  example: fcjdyctwrtseclttzxihpzwfkxwforkrtosynwhkryjxvkhswduookejtxavaszybdauvmkrzsftqbkdcitgcphhbmhflchrvretophsxouxwffudoljroiazggburjgcnnmvoepbnvfeuvplhalscadreqpixctptszpqmgehyiljcbltjhzjbbykkgptyucsonhaerqqfumaoykpetuezywqgllimfcewmwagfnb
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: yzmubwszcsqobcziwtexnzlsjgrdbfqddkpskgharcaevgdrlyeidgubtwmjyqppstvfudvbxxotqeyginwwxsxhfexkonmqbhgworzusvirdhesccrilzdqnwavsvxkmtxeexrfbnpmdwuiswrabokbyfrsacpjpadflflgjqmqymfcwnyherdhdoeswqdhsfhlsfbrpxvagdktlqzavpzcyncbreaeeqvphzpbughf
+                  example: uckxairtezusyhnljzupefoohwnuczcfycdkmqviaxdrxnqhdarucpmdnakbiuoqrgivnyspkpfvclehottvjgurkoaqirqfoyhvhlggqfcvriuyxxxlanhxybiikmhanjcoaivjzcxvbiohtvuqxizfqhydawfhqqfjnldfcnydurxvgcnpzmpqvuxadzkyohqkuoutvjuxtspabueclawllwzs
               required:
                 - name
                 - email
@@ -81,7 +81,7 @@ paths:
                     type: string
                     example: Unauthorized
       tags:
-        - 'Auth Parents API'
+        - 'Auth Parents'
       requestBody:
         required: false
         content:
@@ -92,11 +92,11 @@ paths:
                 id:
                   type: string
                   description: 'This field is required when <code>name</code> is not present. Must not be greater than 255 characters.'
-                  example: dfyjfhxzgkeerrhbdmpzmiwzdljvlhahiqpsfufkkjkozoffyyztyrhlsyjavyggkwirpnvoftdbvhkaljutxbntauljpwgaekqevbgnbiabctkzsyswupidwtjjwosxyhmxpkxfqtubdnsptrlmbmkbupnvjzvyituvlhjzbeiigjmjefuehmokengzvzpzqyqjd
+                  example: fizfpamdloypuvtagdtfagpleunocbqrieldiqwxmvqafpbxljsdlblwlhyfkrpu
                 name:
                   type: string
                   description: 'This field is required when <code>id</code> is not present. Must not be greater than 255 characters.'
-                  example: yqbeshtdzewnghblzirirrnzfkhaquwnzanyvrztjsmwkkppixerlymddtzedxkxxeiyglpwbhwkmdfaxingfwkiurcmodilmoesjunkxjjudrexffykvcmppokknrqiuoupgfaddhbrbghxribnujoxxeszdjotzssbnpdjyzpaamxodcwxswmzopmurwxrxjjfannlpgmmuepjzponmwggtywoojqlzi
+                  example: sgxlcgigphi
       security: []
   /api/babies:
     get:
@@ -134,21 +134,21 @@ paths:
                 example:
                   data:
                     -
-                      id: null
-                      name: 'Trevor Raynor DVM'
+                      id: 5
+                      name: 'Hal Hamill'
                     -
-                      id: null
-                      name: 'Danial Blanda V'
+                      id: 6
+                      name: 'Miss Bailee Robel I'
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: null
-                        name: 'Trevor Raynor DVM'
+                        id: 5
+                        name: 'Hal Hamill'
                       -
-                        id: null
-                        name: 'Danial Blanda V'
+                        id: 6
+                        name: 'Miss Bailee Robel I'
                     description: '"list of all Babies"'
                     items:
                       type: object
@@ -204,7 +204,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: lctzwgypmybufhajaxftrmnljjxubasggdwrpqedmpthjvpkfzmhpbrygqjptvoevmhdjkoaymacwvcwmyfmflqjkhuljpghbbdobgjujgcggtbbygaabhoxzmssgqhlajxmuixzlaauatvdziuvgwusekxoshbcqnxkyequhzpqhokrqbmmjnopvcujlvrnnnpagechobfriglpvivronadtggarrdndlebl
+                  example: wugfjqgqjtbzjlvtwsqstswiimiceumoogrcmgqvgprtpgsbuhpooksvuqlsvpjueomdjppgmrwzmqhxvqoqsfzbqnwua
               required:
                 - name
   '/api/babies/{id}':
@@ -242,14 +242,14 @@ paths:
                 type: object
                 example:
                   data:
-                    id: null
-                    name: 'Kayla Eichmann'
+                    id: 7
+                    name: 'Dr. Reagan Pfannerstill MD'
                 properties:
                   data:
                     type: object
                     example:
-                      id: null
-                      name: 'Kayla Eichmann'
+                      id: 7
+                      name: 'Dr. Reagan Pfannerstill MD'
                     description: "\" App\\Models\\Baby Info\"\nReturn a one App\\Models\\Baby by id"
         401:
           description: Unauthenticated
@@ -303,7 +303,7 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: rrvyhfjjeqhccopnnuftzhtrkoqtggajztvtjlmnurdgqzfdrlhpwpbcxudpdvjawpvtrryiqyhogyxwlmmykdnnmfpjqgcyvfbckcazvwbqoleldiyvqqwclcqdfajgbayolrazydyrkhoivxpnmcfabcvfjcccwqkqenxecgawiqoddjuxoijtrdzoymnlpjaqrnptnvmbktcaeuflrqvkccmpjwansrfjbnwctxwyxkiacjydp
+                  example: kacymgmlcasbexjxvzxhfscdlljbfrdegemzdlgzwimppdgprzelhzwhifwcokuncfkqirlknzhblyogizyheocawylgacutjkucyavyorumooxcccccelvlolgkvrxflywvoqsisrvfpqsvhztznrgxukyrkpdxsqnrhsoiwpjryejzgafykvtzbxmlpmdkisgmousjhaqzmwgjzwxaqjeeyfixrkzbtarrnoacduaohqhddygvekjcdixrfrt
               required:
                 - name
     delete:
@@ -339,7 +339,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the baby.'
-        example: 3
+        example: 7
         required: true
         schema:
           type: integer
@@ -372,6 +372,19 @@ paths:
       responses: {  }
       tags:
         - 'Parents API'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: ''
+                  example: qui
+              required:
+                - id
   /api/parents:
     get:
       summary: 'Show Partner.'
@@ -408,25 +421,25 @@ paths:
                 example:
                   data:
                     -
-                      id: null
-                      name: 'Frederick Koch'
-                      email: euna49@example.net
+                      id: 5
+                      name: 'Abigayle Kihn I'
+                      email: christopher.ruecker@example.com
                     -
-                      id: null
-                      name: 'Porter Kutch'
-                      email: emmerich.laverna@example.org
+                      id: 6
+                      name: 'Dr. Burnice Boyle Sr.'
+                      email: teagan.shanahan@example.org
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: null
-                        name: 'Frederick Koch'
-                        email: euna49@example.net
+                        id: 5
+                        name: 'Abigayle Kihn I'
+                        email: christopher.ruecker@example.com
                       -
-                        id: null
-                        name: 'Porter Kutch'
-                        email: emmerich.laverna@example.org
+                        id: 6
+                        name: 'Dr. Burnice Boyle Sr.'
+                        email: teagan.shanahan@example.org
                     items:
                       type: object
         401:
@@ -445,7 +458,7 @@ paths:
         - 'Parents API'
 tags:
   -
-    name: 'Auth Parents API'
+    name: 'Auth Parents'
     description: ''
   -
     name: 'Baby Resource'

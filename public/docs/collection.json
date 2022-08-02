@@ -10,13 +10,13 @@
     ],
     "info": {
         "name": "Parent Baby Tracking - API Documentation",
-        "_postman_id": "e43d12c8-8a2b-4911-bbba-16d269395220",
+        "_postman_id": "2571fd0e-1753-40c2-841b-0a4b3d712e28",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
         {
-            "name": "Auth Parents API",
+            "name": "Auth Parents",
             "description": "",
             "item": [
                 {
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"qvnpvtkcemynkhojepfxwmpxwncbykiwyyjmmnezbfoozqhzwlmaaiiljijbmdmspdexilbppgquqiixzyvkocouhekhsocsszytmphtivwxpkchmrzfngpqajxgeomswfiocxmpypqiglffscckqnannuqidvbsu\",\"email\":\"yzmubwszcsqobcziwtexnzlsjgrdbfqddkpskgharcaevgdrlyeidgubtwmjyqppstvfudvbxxotqeyginwwxsxhfexkonmqbhgworzusvirdhesccrilzdqnwavsvxkmtxeexrfbnpmdwuiswrabokbyfrsacpjpadflflgjqmqymfcwnyherdhdoeswqdhsfhlsfbrpxvagdktlqzavpzcyncbreaeeqvphzpbughf\"}"
+                            "raw": "{\"name\":\"fcjdyctwrtseclttzxihpzwfkxwforkrtosynwhkryjxvkhswduookejtxavaszybdauvmkrzsftqbkdcitgcphhbmhflchrvretophsxouxwffudoljroiazggburjgcnnmvoepbnvfeuvplhalscadreqpixctptszpqmgehyiljcbltjhzjbbykkgptyucsonhaerqqfumaoykpetuezywqgllimfcewmwagfnb\",\"email\":\"uckxairtezusyhnljzupefoohwnuczcfycdkmqviaxdrxnqhdarucpmdnakbiuoqrgivnyspkpfvclehottvjgurkoaqirqfoyhvhlggqfcvriuyxxxlanhxybiikmhanjcoaivjzcxvbiohtvuqxizfqhydawfhqqfjnldfcnydurxvgcnpzmpqvuxadzkyohqkuoutvjuxtspabueclawllwzs\"}"
                         },
                         "description": "Allow the parentUser to Register",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"id\":\"dfyjfhxzgkeerrhbdmpzmiwzdljvlhahiqpsfufkkjkozoffyyztyrhlsyjavyggkwirpnvoftdbvhkaljutxbntauljpwgaekqevbgnbiabctkzsyswupidwtjjwosxyhmxpkxfqtubdnsptrlmbmkbupnvjzvyituvlhjzbeiigjmjefuehmokengzvzpzqyqjd\",\"name\":\"yqbeshtdzewnghblzirirrnzfkhaquwnzanyvrztjsmwkkppixerlymddtzedxkxxeiyglpwbhwkmdfaxingfwkiurcmodilmoesjunkxjjudrexffykvcmppokknrqiuoupgfaddhbrbghxribnujoxxeszdjotzssbnpdjyzpaamxodcwxswmzopmurwxrxjjfannlpgmmuepjzponmwggtywoojqlzi\"}"
+                            "raw": "{\"id\":\"fizfpamdloypuvtagdtfagpleunocbqrieldiqwxmvqafpbxljsdlblwlhyfkrpu\",\"name\":\"sgxlcgigphi\"}"
                         },
                         "description": "Allow the parentUser to Login",
                         "auth": {
@@ -121,7 +121,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":null,\"name\":\"Trevor Raynor DVM\"},{\"id\":null,\"name\":\"Danial Blanda V\"}]}",
+                            "body": "{\"data\":[{\"id\":5,\"name\":\"Hal Hamill\"},{\"id\":6,\"name\":\"Miss Bailee Robel I\"}]}",
                             "name": "0"
                         },
                         {
@@ -154,7 +154,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"lctzwgypmybufhajaxftrmnljjxubasggdwrpqedmpthjvpkfzmhpbrygqjptvoevmhdjkoaymacwvcwmyfmflqjkhuljpghbbdobgjujgcggtbbygaabhoxzmssgqhlajxmuixzlaauatvdziuvgwusekxoshbcqnxkyequhzpqhokrqbmmjnopvcujlvrnnnpagechobfriglpvivronadtggarrdndlebl\"}"
+                            "raw": "{\"name\":\"wugfjqgqjtbzjlvtwsqstswiimiceumoogrcmgqvgprtpgsbuhpooksvuqlsvpjueomdjppgmrwzmqhxvqoqsfzbqnwua\"}"
                         },
                         "description": ""
                     },
@@ -172,7 +172,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "7",
                                     "description": "The ID of the baby."
                                 }
                             ]
@@ -195,7 +195,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"name\":\"Kayla Eichmann\"}}",
+                            "body": "{\"data\":{\"id\":7,\"name\":\"Dr. Reagan Pfannerstill MD\"}}",
                             "name": "0"
                         },
                         {
@@ -218,7 +218,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "10",
                                     "description": "The ID of the baby."
                                 }
                             ]
@@ -236,7 +236,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"rrvyhfjjeqhccopnnuftzhtrkoqtggajztvtjlmnurdgqzfdrlhpwpbcxudpdvjawpvtrryiqyhogyxwlmmykdnnmfpjqgcyvfbckcazvwbqoleldiyvqqwclcqdfajgbayolrazydyrkhoivxpnmcfabcvfjcccwqkqenxecgawiqoddjuxoijtrdzoymnlpjaqrnptnvmbktcaeuflrqvkccmpjwansrfjbnwctxwyxkiacjydp\"}"
+                            "raw": "{\"name\":\"kacymgmlcasbexjxvzxhfscdlljbfrdegemzdlgzwimppdgprzelhzwhifwcokuncfkqirlknzhblyogizyheocawylgacutjkucyavyorumooxcccccelvlolgkvrxflywvoqsisrvfpqsvhztznrgxukyrkpdxsqnrhsoiwpjryejzgafykvtzbxmlpmdkisgmousjhaqzmwgjzwxaqjeeyfixrkzbtarrnoacduaohqhddygvekjcdixrfrt\"}"
                         },
                         "description": ""
                     },
@@ -254,7 +254,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "16",
+                                    "value": "10",
                                     "description": "The ID of the baby."
                                 }
                             ]
@@ -301,7 +301,10 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"id\":\"qui\"}"
+                        },
                         "description": ""
                     },
                     "response": []
@@ -333,7 +336,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":null,\"name\":\"Frederick Koch\",\"email\":\"euna49@example.net\"},{\"id\":null,\"name\":\"Porter Kutch\",\"email\":\"emmerich.laverna@example.org\"}]}",
+                            "body": "{\"data\":[{\"id\":5,\"name\":\"Abigayle Kihn I\",\"email\":\"christopher.ruecker@example.com\"},{\"id\":6,\"name\":\"Dr. Burnice Boyle Sr.\",\"email\":\"teagan.shanahan@example.org\"}]}",
                             "name": "0"
                         },
                         {
