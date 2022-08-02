@@ -20,6 +20,7 @@ class ParentUserAuthController extends Controller
     {
         $data = $request->validated();
 
+
         $parentUser = ParentUser::create($data);
 
         $token = $parentUser
@@ -39,11 +40,9 @@ class ParentUserAuthController extends Controller
      */
     public function login(ParentUserLoginRequest $request)
     {
-        if (!canLogin('parentUser', ['id'])) {
-            return unauthorized();
-        }
+        $data = $request->validated();
 
-        $parentUser = ParentUser::where('id', $request['id'])->firstOrFail();
+        $parentUser = ParentUser::where(key($data), $data[key($data)])->firstOrFail();
 
 
         $token = $parentUser

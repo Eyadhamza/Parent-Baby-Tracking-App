@@ -25,6 +25,7 @@ class ParentUserManagementTest extends TestCase
             ]);
 
     }
+
     public function test_parent_user_can_not_add_himself_as_a_partner()
     {
         $this->withoutExceptionHandling();
@@ -38,6 +39,7 @@ class ParentUserManagementTest extends TestCase
                 'message' => 'You can not invite yourself',
             ]);
     }
+
     public function test_a_user_parent_can_show_his_partner()
     {
         $this->withoutExceptionHandling();
@@ -52,12 +54,13 @@ class ParentUserManagementTest extends TestCase
             ->assertStatus(200)
             ->assertJson([
                 'data' => [
-                        'id' => $partner->id,
-                        'name' => $partner->name,
-                        'email' => $partner->email,
-                    ],
+                    'id' => $partner->id,
+                    'name' => $partner->name,
+                    'email' => $partner->email,
+                ],
             ]);
     }
+
     public function test_a_user_parent_can_register_with_his_name_or_id()
     {
         $this->withoutExceptionHandling();
@@ -65,9 +68,31 @@ class ParentUserManagementTest extends TestCase
         $this->postJson(route('parents.register'), [
             'id' => '12345',
             'name' => 'John Doe',
+            'email' => 'John@gmail.com'
         ])->assertStatus(200)
-            ->assertJson([
-                'message' => 'You are now registered',
+            ->assertJsonStructure([
+                'data' => [
+                    'access_token',
+                    'token_type',
+                ]
+            ]);
+    }
+
+    public function test_a_user_parent_can_login_with_id_or_name()
+    {
+        $this->withoutExceptionHandling();
+
+        $parentUser = ParentUser::factory()->create();
+
+        $this->postJson(route('parents.login'), [
+            'id' => $parentUser->id,
+            'name' => $parentUser->name,
+        ])->assertStatus(200)
+            ->assertJsonStructure([
+                'data' => [
+                    'access_token',
+                    'token_type',
+                ]
             ]);
     }
 }

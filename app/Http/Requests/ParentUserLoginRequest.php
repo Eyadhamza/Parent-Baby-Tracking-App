@@ -9,7 +9,8 @@ class ParentUserLoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-
+            'id' => 'required_without:name|max:255',
+            'name' => 'required_without:id|string|max:255',
         ];
     }
 

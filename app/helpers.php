@@ -21,7 +21,6 @@ if (!function_exists('grantToken')) {
                 'data' => [
                     'access_token' => $token->plainTextToken,
                     'token_type' => 'Bearer',
-                    'role' => class_basename($token->accessToken->tokenable_type),
                 ],
             ]);
     }
